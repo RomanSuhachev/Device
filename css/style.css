@@ -228,6 +228,16 @@ body {
 
 /* Slider */
 
+.promo {
+  margin-top: -29px;
+  position: relative;
+}
+
+.image-wrapper {
+  margin-top: -121px;
+  z-index: 1;
+}
+
 .slider {
   display: flex;
 }
@@ -242,6 +252,14 @@ body {
 
 .slider-description {
   color: #444444;
+  padding: 0 10px 0 40px;
+  z-index: 1;
+}
+
+.slider-descriptions {
+  line-height: 30px;
+  margin: 0;
+  margin-bottom: 60px;
 }
 
 .table-property-title {
@@ -261,13 +279,103 @@ body {
   font-weight: 800;
   font-size: var(--second-font);
   line-height: 21px;
-  color: var(--main-font);
+  color: var(--second-font);
   text-decoration: none;
 }
 
 .slider-title,
 .slider-description {
   margin: 0;
+}
+
+.slider-title {
+  margin-bottom: 30px;
+}
+
+.slider-link {
+  text-transform: uppercase;
+  width: 210px;
+  padding: 5px 38px;
+  letter-spacing: 0.2em;
+  position: relative;
+}
+
+.slider-link::after {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color:var(--yellow-light);
+  width: 100%;
+  position: absolute;
+  content:'';
+  height: 100%;
+  z-index:-1;
+  transform: scaleY(0.2);
+  transition: transform ease-in-out 0.5s;
+}
+
+.slider-link:hover::after {
+  transform: scaleY(1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.property {
+  display: flex;
+  margin-top: 55px;
+}
+
+.property tbody {
+  width: 100%;
+}
+
+.property tr {
+  display: flex;
+}
+
+.property tbody tr:first-child {
+  margin-bottom: 10px;
+}
+
+.table-property-title:first-child {
+  margin-right: 55px;
+}
+
+.table-property-description:first-child {
+  margin-right: 20px;
+}
+
+.slider-wrapper {
+  counter-reset: num-slider;
+  position: relative;
+}
+
+.slider-wrapper .slider {
+  counter-increment: num-slider;
+}
+
+.slider-wrapper::after {
+  content: '0'counter(num-slider);
+  position: absolute;
+  right: 50px;
+  top: -40px;
+  color:#ffffff;
+  font-size: 180px;
+  line-height: 30px;
+  font-family: "Rubick", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.controls-inputs {
+  position: absolute;
+  right: 0;
+  top: 250px;
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  column-gap: 10px;
+  z-index:3;
 }
 
 /* Goods list */
@@ -287,6 +395,57 @@ body {
   text-decoration: none;
 }
 
+.goods-link-background {
+  background-color: var(--yellow-light);
+  min-width: 160px;
+  min-height: 160px;
+  display: block;
+  margin-bottom: 33px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.goods-link-description {
+  width: 100%;
+  display: block;
+}
+
+.virtual {
+  background-image: url("../images/svg/VR.svg");
+  width: 97px;
+  height: 55px;
+}
+
+.monopods {
+  background-image: url("../images/svg/monopod.svg");
+  width: 89px;
+  height: 117px;
+  background-position: 50% 100%;
+}
+
+.camera {
+  background-image: url("../images/svg/camera.svg");
+  width: 71px;
+  height: 87px;
+}
+
+.fitness {
+  background-image: url("../images/svg/fitness.svg");
+  width: 108px;
+  height: 65px;
+}
+
+.smart {
+  background-image: url("../images/svg/smart-clocks.svg");
+  width: 56px;
+  height: 98px;
+}
+
+.quadro {
+  background-image: url("../images/svg/quadro.svg");
+  width: 132px;
+  height: 70px;
+}
 /* Слайдер с услугами */
 
 .service-slider {
