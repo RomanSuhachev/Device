@@ -15,7 +15,7 @@
               <h2 class="visually-hidden">Поиск по сайту</h2>
               <form action="https://echo.htmlacademy.ru/courses" class="search-form" method="post">
                 <label class="form-search-title">
-                  <input type="search" class="search-input-field" placeholder="Текст поиска" name="search-field">
+                  <input type="search" class="search-input-field" placeholder="Поиск по сайту" name="search-field">
                   <span class="visually-hidden">Поиск по сайту</span>
                 </label>
                 <button type="submit" class="search-form-btn">Найти</button>
@@ -33,7 +33,7 @@
                 <li class="catalog-item"><a href="#" class="catalog-main-link catalog-link">Каталог товаров</a>
                   <div class="list-wrapper">
                       <ul class="catalog-submenu catalog-submenu-vr">
-                        <li class="submenu-item"><a href="#" class="submenu-link">Вирутальная реальность</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Виртуальная реальность</a></li>
                         <li class="submenu-item"><a href="#" class="submenu-link">Моноподы для селфи</a></li>
                         <li class="submenu-item"><a href="#" class="submenu-link">Экшн-камеры</a></li>
                       </ul>
@@ -48,9 +48,9 @@
                     </li>
                   </ul>
             <ul class="services-list no-grass">
-              <li class="services-item"><a href="" class="services-item-link catalog-link">Доставка</a></li>
-              <li class="services-item"><a href="" class="services-item-link catalog-link">Гарантия</a></li>
-              <li class="services-item"><a href="" class="services-item-link catalog-link">Контакты</a></li>
+              <li class="services-item"><a href="#" class="services-item-link catalog-link">Доставка</a></li>
+              <li class="services-item"><a href="#" class="services-item-link catalog-link">Гарантия</a></li>
+              <li class="services-item"><a href="#" class="services-item-link catalog-link">Контакты</a></li>
             </ul>
           </section>
         </nav>
@@ -60,9 +60,9 @@
       <section class="promo wrapper">
         <h2 class="visually-hidden">Популярные товары</h2>
         <div class="controls-inputs">
-          <label><input type="radio" name="slider" checked></label>
-          <label><input type="radio" name="slider"></label>
-          <label><input type="radio" name="slider"></label>
+          <label><input type="radio" name="slider" checked><span class="control-mark"></span></label>
+          <label><input type="radio" name="slider"><span class="control-mark"></span></label>
+          <label><input type="radio" name="slider"><span class="control-mark"></span></label>
         </div>
         <div class="slider-wrapper">
         <div class="slider slider-first">
@@ -120,6 +120,15 @@
               <h3 class="service-slider-title">Доставка</h3>
               <p class="service-slider-description">Мы с удовольствием доставим ваш товар прямо <br>
                 к вашему подъезду совершенно бесплатно! Ведь <br> мы неплохо заработаем, поднимая его на ваш этаж.</p>
+            </div>
+            <div class="slider-quaranty" id="slider-quaranty">
+              <h3 class="service-slider-title">Гарантия</h3>
+              <p class="service-slider-description">Если из-за возгорания купленного у нас товара у вас
+                сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
+            </div>
+            <div class="slider-credit">
+              <h3 class="service-slider-title">Кредит</h3>
+              <p class="service-slider-description">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
             </div>
           </div>
         </div>
@@ -179,7 +188,7 @@
           <form action="https://echo.htmlacademy.ru/courses" class="subscribe-form" method="post">
             <label class="subscribe-form-input"><input type="email" class="subscribe-input" name="mail" placeholder="Ваш e-mail"></label>
             <button type="submit" class="subscribe-btn">ПОДПИСАТЬСЯ</button>
-            <span class="other-text">Это бесплатно</span>
+            <span class="other-text">Это бесплатно <span class="success"></span></span>
           </form>
         </div>
       </section>
@@ -217,5 +226,48 @@
         </div>
       </section>
     </footer>
+    <section class="modal-background">
+      <div class="modal-container">
+        <h2 class="modal-title">Доставка под заказ</h2>
+        <button type="button" class="modal-close-btn">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <form action="https://echo.htmlacademy.ru/courses" class="modal-form">
+        <div class="inputs-wrapper">
+          <div class="input-wrapper">
+            <label for="modal-name-input" class="name-title">Ваше имя:</label>
+            <input type="text" class="modal-name-input" placeholder="Введите имя" id="modal-name-input" name="name">
+          </div>
+          <div class="input-wrapper">
+            <label for="modal-mail-input" class="mail-title">Ваш e-mail:</label>
+            <input type="email" class="modal-mail-input" placeholder="Ваш e-mail" id="modal-mail-input" name="email">
+          </div>
+        </div>
+        <div class="exotic-order">
+          <div class="exotic-order-wrapper">
+            <label for="exotic-description" class="exotic-description-title">Что нужно привезти:</label>
+            <input type="text" class="exotic-description" placeholder="В свободной форме" name="order-description">
+          </div>
+          <div class="exotic-amount-container">
+          <span class="exotic-title-span">
+            <label for="exotic-amount" class="exotic-amount-title">Количество:</label>
+            <span class="exotic-field-info">
+              <span class="exotic-info-text">
+                Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.
+              </span>
+            </span>
+          </span>
+            <div class="amount-btn-wrapper">
+              <button type="button" class="amount-btn-minus modal-button"><span class="visually-hidden">Меньше</span></button>
+              <input type="number" class="exotic-amount" min="1" step="1" value="1" name="exotic-amount">
+              <button type="button" class="amount-btn-plus modal-button"><span class="visually-hidden">Больше</span></button>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="modal-form-submit-btn btn">отправить</button>
+      </form>
+      </div>
+    </section>
+    <script src="js/modal.js"></script>
 </body>
 </html>
