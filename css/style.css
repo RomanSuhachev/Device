@@ -1204,6 +1204,15 @@ margin-bottom: 75px;
   opacity: 0.5;
 }
 
+.subscribe-input:focus {
+  background-color: #dcdcdc;
+  outline: none;
+}
+
+.subscribe-input:invalid {
+  border-bottom: 3px solid var(--error);
+}
+
 .subscribe-form-input {
   width: 100%;
 }
@@ -1635,6 +1644,10 @@ margin-bottom: 75px;
   display: flex;
 }
 
+.exotic-amount:invalid {
+  outline: 2px solid var(--error);
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   appearance: none;
@@ -1782,7 +1795,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .breadcrumbs-list-item:not(:last-child) {
-  margin-right: 38px;
+  padding-right: 38px;
+  position: relative;
+}
+
+.breadcrumbs-list-item:not(:last-child)::after {
+  content:'';
+  position: absolute;
+  right: 15px;
+  top: 7px;
+  background-image: url("../images/svg/breadcrumbs-arrow.svg");
+  width: 4px;
+  height: 7px;
+  opacity: 0.2;
 }
 
 .breadcrumbs-list {
@@ -1795,12 +1820,22 @@ input[type=number]::-webkit-outer-spin-button {
   top: 100%;
   left: 0;
   right: 0;
+  z-index: 2;
 }
 
 .select-menu-item {
   text-align: start;
   padding: 5px 5px;
   z-index: 2;
+}
+
+.select-menu-item  .select-menu-item-link {
+  text-decoration: none;
+  font-family: "Rubick", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--main-color);
 }
 
 .filter-section {
@@ -1835,6 +1870,18 @@ input[type=number]::-webkit-outer-spin-button {
   width: 18px;
   height: 18px;
   position: absolute;
+}
+
+.range-button:hover {
+  border: 2px solid rgb(50%,50%,50%);
+}
+
+.range-button:active {
+  background-color: var(--main-color);
+}
+
+.range-button:focus {
+  outline: 2px solid var(--violet);
 }
 
 .toggle-min {
@@ -1898,6 +1945,10 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: transparent;
 }
 
+.catalog-filter-input:focus {
+  outline: 2px solid var(--violet);
+}
+
 .catalog-filter-label {
   font-size: 15px;
   line-height: 18px;
@@ -1936,6 +1987,15 @@ input[type=number]::-webkit-outer-spin-button {
   row-gap: 15px;
 }
 
+.color-list-item:hover,
+.bluetooth-list-item:hover {
+  opacity: 0.6;
+}
+
+.color-list-item:active,
+.bluetooth-list-item:active {
+  opacity: 0.3;
+}
 
 .color-list-item .filter-control-mark {
   width: 20px;
@@ -2025,6 +2085,11 @@ input[type=number]::-webkit-outer-spin-button {
   margin-right: 10px;
 }
 
+.select-btn:hover,
+.select-menu li:hover {
+  opacity: 0.6;
+}
+
 .sort-list[open] .select-btn::after {
   transform: rotate(180deg);
 }
@@ -2039,6 +2104,14 @@ input[type=number]::-webkit-outer-spin-button {
   background-repeat: no-repeat;
   background-position: center center;
   cursor: pointer;
+}
+
+.sort-button:hover {
+  opacity: 0.6;
+}
+
+.sort-button:active {
+  opacity: 1;
 }
 
 .cheap {
@@ -2111,6 +2184,15 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #f0f0f0;
 }
 
+.product-card:nth-child(2) .product-card-image-wrapper::after {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  content: url("../images/svg/New.svg");
+  width: 60px;
+  height: 60px;
+}
+
 .product-card-image {
   object-fit: cover;
 }
@@ -2119,6 +2201,14 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.product-card:nth-child(2) .product-card-image-wrapper:hover::after {
+  opacity: 0.6;
+}
+
+.product-card:nth-child(2):active .product-card-image-wrapper::after {
+  opacity: 0.3;
 }
 
 .product-card:hover .product-card-description {
@@ -2176,12 +2266,25 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
+.catalog-more-btn:hover {
+  border-color: var(--main-color);
+}
+
+.catalog-more-btn:active {
+  color: rgba(0,0,0,0.3);
+}
+
+.catalog-more-btn:focus {
+  outline: 2px solid var(--violet);
+}
+
 .pagination {
   max-width: 760px;
   margin: 0 auto;
   background-color: #f0f0f0;
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .pagination-wrapper {
@@ -2221,6 +2324,32 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 14px;
   line-height: 20px;
 }
+
+.pagination-item-link:hover {
+  opacity: 1;
+}
+
+.pagination-item-link:active {
+  opacity: 0.1;
+}
+
+.pagination-item-link:focus {
+  outline: 2px solid var(--violet);
+}
+
+.pagination-link:hover {
+  background-color: #dcdcdc;
+}
+
+.pagination-link:active {
+  color: rgba(0,0,0,0.3);
+}
+
+.pagination-link:focus {
+  outline: 2px solid var(--violet);
+}
+
+
 
 .visually-hidden {
   position: absolute;
